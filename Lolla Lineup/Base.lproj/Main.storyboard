@@ -7,7 +7,7 @@
         <!--Genres-->
         <scene sceneID="W89-QT-Uyv">
             <objects>
-                <viewController title="Genres" id="ikv-CV-QxE" sceneMemberID="viewController">
+                <viewController title="Genres" id="ikv-CV-QxE" customClass="Genres" customModule="Lolla_Lineup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qGT-fo-idV"/>
                         <viewControllerLayoutGuide type="bottom" id="Tmq-2v-VrT"/>
@@ -61,7 +61,7 @@
         <!--Bands in Selected Genre-->
         <scene sceneID="kHS-db-0Az">
             <objects>
-                <viewController title="Bands in Selected Genre" id="3fW-sZ-NeC" sceneMemberID="viewController">
+                <viewController title="Bands in Selected Genre" id="3fW-sZ-NeC" customClass="BandsInSelectedGenre" customModule="Lolla_Lineup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kfr-DU-AWr"/>
                         <viewControllerLayoutGuide type="bottom" id="1VC-S3-oyj"/>
@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="1831.5" y="-217.5"/>
         </scene>
-        <!--View Controller-->
+        <!--All Bands-->
         <scene sceneID="Yaz-1K-Zci">
             <objects>
-                <viewController id="yJJ-U1-CPo" sceneMemberID="viewController">
+                <viewController title="All Bands" id="yJJ-U1-CPo" customClass="AllBands" customModule="Lolla_Lineup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I66-nR-Lp3"/>
                         <viewControllerLayoutGuide type="bottom" id="ndK-Qs-NSl"/>
@@ -121,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="106" width="375" height="512"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="crM-70-3jJ" style="IBUITableViewCellStyleDefault" id="dk4-Uv-beR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" textLabel="crM-70-3jJ" style="IBUITableViewCellStyleDefault" id="dk4-Uv-beR">
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dk4-Uv-beR" id="M7q-KZ-fI9">
@@ -137,11 +137,20 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NSb-RI-whY" kind="show" id="cOR-gh-jR7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Bands" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngA-7m-Wyp">
-                                <rect key="frame" x="141" y="72" width="72" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Bands Playing at Lollapalooza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngA-7m-Wyp">
+                                <rect key="frame" x="41" y="80" width="292" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGe-vG-Vot">
+                                <rect key="frame" x="168" y="114" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -149,10 +158,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="kI7-be-quS"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="t6O-nQ-ZWv"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="NSb-RI-whY" kind="show" id="m1y-oA-264"/>
+                        <outlet property="allBandsTableView" destination="YOa-yy-cJJ" id="ngS-q8-lJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVS-i4-ARc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,7 +175,7 @@
         <!--Songs by Selected Band-->
         <scene sceneID="9Nm-nv-0u1">
             <objects>
-                <viewController title="Songs by Selected Band" id="NSb-RI-whY" sceneMemberID="viewController">
+                <viewController title="Songs by Selected Band" id="NSb-RI-whY" customClass="SongsBySelectedBand" customModule="Lolla_Lineup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BA6-RR-EUn"/>
                         <viewControllerLayoutGuide type="bottom" id="0s2-Tq-E5i"/>
@@ -171,33 +184,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-JX-HlL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="cjc-ks-oBU" style="IBUITableViewCellStyleDefault" id="eHG-xm-BOl">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eHG-xm-BOl" id="liO-Vj-jM8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cjc-ks-oBU">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Band Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCf-dH-gFh">
+                                <rect key="frame" x="20" y="72" width="335" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Top Songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjp-FQ-b7l">
+                                <rect key="frame" x="153" y="180" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ib-zr-b8U">
+                                <rect key="frame" x="20" y="222" width="335" height="30"/>
+                                <state key="normal" title="Song 1"/>
+                                <connections>
+                                    <action selector="song1ButtonTapped:" destination="NSb-RI-whY" eventType="touchUpInside" id="HBW-Yn-gMs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQO-5X-LwS">
+                                <rect key="frame" x="20" y="335" width="335" height="30"/>
+                                <state key="normal" title="Song 3"/>
+                                <connections>
+                                    <action selector="song3ButtonTapped:" destination="NSb-RI-whY" eventType="touchUpInside" id="rZz-xU-1Vt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anl-Al-ceh">
+                                <rect key="frame" x="20" y="385" width="335" height="30"/>
+                                <state key="normal" title="Song 4"/>
+                                <connections>
+                                    <action selector="song4ButtonTapped:" destination="NSb-RI-whY" eventType="touchUpInside" id="5Or-jf-HNF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmS-06-nVy">
+                                <rect key="frame" x="20" y="437" width="335" height="30"/>
+                                <state key="normal" title="Song 5"/>
+                                <connections>
+                                    <action selector="song5ButtonTapped:" destination="NSb-RI-whY" eventType="touchUpInside" id="ECq-vk-6Sa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3N-ro-61N">
+                                <rect key="frame" x="20" y="109" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le8-Zf-IMd">
+                                <rect key="frame" x="149" y="130" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-NE-yVu">
+                                <rect key="frame" x="20" y="273" width="335" height="30"/>
+                                <state key="normal" title="Song 2"/>
+                                <connections>
+                                    <action selector="song2ButtonTapped:" destination="NSb-RI-whY" eventType="touchUpInside" id="efK-il-MQh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="le8-Zf-IMd" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="1wH-hb-2tQ"/>
+                            <constraint firstItem="rCf-dH-gFh" firstAttribute="top" secondItem="BA6-RR-EUn" secondAttribute="bottom" constant="20" id="65J-NC-gQB"/>
+                            <constraint firstItem="le8-Zf-IMd" firstAttribute="top" secondItem="V3N-ro-61N" secondAttribute="bottom" constant="5" id="6Ao-Fq-YxK"/>
+                            <constraint firstItem="pQO-5X-LwS" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="9F2-BQ-2u1"/>
+                            <constraint firstItem="0gE-NE-yVu" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="Alw-22-Apk"/>
+                            <constraint firstItem="mmS-06-nVy" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="BbD-vd-HKX"/>
+                            <constraint firstItem="Vjp-FQ-b7l" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="Hsk-5F-nUI"/>
+                            <constraint firstItem="V3N-ro-61N" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="LNd-IG-3gV"/>
+                            <constraint firstItem="7ib-zr-b8U" firstAttribute="top" secondItem="Vjp-FQ-b7l" secondAttribute="bottom" constant="25" id="LXi-EL-iQD"/>
+                            <constraint firstItem="Anl-Al-ceh" firstAttribute="top" secondItem="pQO-5X-LwS" secondAttribute="bottom" constant="25" id="NLT-iw-Fas"/>
+                            <constraint firstItem="pQO-5X-LwS" firstAttribute="top" secondItem="0gE-NE-yVu" secondAttribute="bottom" constant="25" id="UX4-NW-CkX"/>
+                            <constraint firstItem="Vjp-FQ-b7l" firstAttribute="top" secondItem="le8-Zf-IMd" secondAttribute="bottom" constant="28" id="ZzC-Tl-yey"/>
+                            <constraint firstItem="V3N-ro-61N" firstAttribute="top" secondItem="rCf-dH-gFh" secondAttribute="bottom" constant="10" id="bkc-AH-GI9"/>
+                            <constraint firstItem="0gE-NE-yVu" firstAttribute="top" secondItem="7ib-zr-b8U" secondAttribute="bottom" constant="21" id="eOz-4y-3ye"/>
+                            <constraint firstItem="7ib-zr-b8U" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="hQv-rH-147"/>
+                            <constraint firstItem="mmS-06-nVy" firstAttribute="top" secondItem="Anl-Al-ceh" secondAttribute="bottom" constant="25" id="qbI-f8-z71"/>
+                            <constraint firstItem="Anl-Al-ceh" firstAttribute="centerX" secondItem="rCf-dH-gFh" secondAttribute="centerX" id="y2Z-eF-PuP"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bandNameLabel" destination="rCf-dH-gFh" id="vO9-Jf-uvA"/>
+                        <outlet property="dayLabel" destination="le8-Zf-IMd" id="hLk-5J-8TR"/>
+                        <outlet property="genreLabel" destination="V3N-ro-61N" id="ecg-tq-8uR"/>
+                        <outlet property="song1" destination="7ib-zr-b8U" id="1zC-Lm-xn9"/>
+                        <outlet property="song2" destination="0gE-NE-yVu" id="7QP-B3-LiX"/>
+                        <outlet property="song3" destination="pQO-5X-LwS" id="rWC-95-Y0V"/>
+                        <outlet property="song4" destination="Anl-Al-ceh" id="rBP-kH-7X9"/>
+                        <outlet property="song5" destination="mmS-06-nVy" id="7pe-o4-JYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFD-aP-I6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,10 +300,10 @@
             </objects>
             <point key="canvasLocation" x="-252" y="-693"/>
         </scene>
-        <!--View Controller-->
+        <!--Days-->
         <scene sceneID="MDr-lp-Qms">
             <objects>
-                <viewController id="RPs-Gp-bTS" sceneMemberID="viewController">
+                <viewController title="Days" id="RPs-Gp-bTS" customClass="Days" customModule="Lolla_Lineup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GhY-bL-yZN"/>
                         <viewControllerLayoutGuide type="bottom" id="Lnf-qz-OSG"/>
@@ -279,7 +357,7 @@
         <!--Bands in Selected Day-->
         <scene sceneID="B3s-wV-Plq">
             <objects>
-                <viewController title="Bands in Selected Day" id="cWp-lI-CNy" sceneMemberID="viewController">
+                <viewController title="Bands in Selected Day" id="cWp-lI-CNy" customClass="BandsInSelectedDay" customModule="Lolla_Lineup" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6p-cm-9ks"/>
                         <viewControllerLayoutGuide type="bottom" id="DE9-Ai-kiG"/>
@@ -359,7 +437,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlK-0B-btv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="495" y="-251"/>
+            <point key="canvasLocation" x="493" y="-217"/>
         </scene>
         <!--Day-->
         <scene sceneID="H7q-hi-eDL">
