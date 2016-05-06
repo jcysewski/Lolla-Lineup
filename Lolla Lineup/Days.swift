@@ -8,28 +8,59 @@
 
 import UIKit
 
-class Days: UIViewController {
+class Days: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
+    @IBOutlet weak var fourDaysTableView: UITableView!
+    
+    var arrayOfDays = ["Day 1", "Day 2", "Day 3", "Day 4"]
+    
+    //var arrayOfAllDays : [ClassDay] = []
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        navigationItem.title = "Lolla Lineup 2016"
+        
+        fourDaysTableView.dataSource = self
+        fourDaysTableView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let myTableViewCell = fourDaysTableView.dequeueReusableCellWithIdentifier("Day Cell", forIndexPath: indexPath)
+        myTableViewCell.textLabel?.text = arrayOfDays[indexPath.row]
+        return myTableViewCell
+        
+        
     }
-    */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return arrayOfDays.count
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+        {
+            let byDayVC = segue.destinationViewController as! BandsInSelectedDay
+            let selectedRow = fourDaysTableView.indexPathForSelectedRow?.row
+            byDayVC.title1 = arrayOfDays[selectedRow!]
+        }
+    
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+//    {
+////        let byDayVC = segue.destinationViewController as! BandsInSelectedDay
+////        let selectedRow = fourDaysTableView.indexPathForSelectedRow?.row
+////        byDayVC.day = arrayOfDays[selectedRow!]
+//        //detailVC.superhero(reciever) = superheros[selectedRow](quarterback)
+//        
+//        if fourDaysTableView.indexPathForSelectedRow == 0
+//        {
+//            
+//        }
+//        if fourDaysTableView.indexPathForSelectedRow == 1
+//        {
+//            
+//        }
+    //}
+
 
 }

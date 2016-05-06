@@ -8,28 +8,42 @@
 
 import UIKit
 
-class Genres: UIViewController {
+class Genres: UIViewController, UITableViewDataSource, UITableViewDelegate
 
-    override func viewDidLoad() {
+{
+    @IBOutlet weak var genresTableView: UITableView!
+    
+    var listOfGenresArray = ["Alternative", "Country", "Electronic", "Hip Hop", "Pop", "Rap", "Rock"]
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        navigationItem.title = "Lolla Lineup 2016"
+        
+        genresTableView.dataSource = self
+        genresTableView.delegate = self
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let myTableViewCell = genresTableView.dequeueReusableCellWithIdentifier("Genre Cell", forIndexPath: indexPath)
+        myTableViewCell.textLabel?.text = listOfGenresArray[indexPath.row]
+        return myTableViewCell
+        
+        
     }
-    */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return listOfGenresArray.count
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        let byDayVC = segue.destinationViewController as! BandsInSelectedGenre
+        let selectedRow = genresTableView.indexPathForSelectedRow?.row
+        byDayVC.title1 = listOfGenresArray[selectedRow!]
+    }
+
 
 }

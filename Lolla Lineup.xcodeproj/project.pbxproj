@@ -21,6 +21,7 @@
 		3F16ABE71CB6BDD8003F2BD2 /* BandsInSelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE61CB6BDD8003F2BD2 /* BandsInSelectedDay.swift */; settings = {ASSET_TAGS = (); }; };
 		3F16ABE91CB6BE20003F2BD2 /* SongsBySelectedBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE81CB6BE20003F2BD2 /* SongsBySelectedBand.swift */; settings = {ASSET_TAGS = (); }; };
 		3F16ABEB1CBC078E003F2BD2 /* DetailBandClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABEA1CBC078E003F2BD2 /* DetailBandClass.swift */; settings = {ASSET_TAGS = (); }; };
+		3FE9BF6C1CC7DF0700B809E4 /* ClassDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9BF6B1CC7DF0700B809E4 /* ClassDay.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		3F16ABE61CB6BDD8003F2BD2 /* BandsInSelectedDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandsInSelectedDay.swift; sourceTree = "<group>"; };
 		3F16ABE81CB6BE20003F2BD2 /* SongsBySelectedBand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsBySelectedBand.swift; sourceTree = "<group>"; };
 		3F16ABEA1CBC078E003F2BD2 /* DetailBandClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailBandClass.swift; sourceTree = "<group>"; };
+		3FE9BF6B1CC7DF0700B809E4 /* ClassDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassDay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				3F16ABE01CB6BC7F003F2BD2 /* Genres.swift */,
 				3F16ABE41CB6BDA1003F2BD2 /* BandsInSelectedGenre.swift */,
 				3F16ABE21CB6BCA0003F2BD2 /* Days.swift */,
+				3FE9BF6B1CC7DF0700B809E4 /* ClassDay.swift */,
 				3F16ABE61CB6BDD8003F2BD2 /* BandsInSelectedDay.swift */,
 				3F16ABE81CB6BE20003F2BD2 /* SongsBySelectedBand.swift */,
 				3F16ABB71CB418DA003F2BD2 /* Assets.xcassets */,
@@ -285,6 +288,7 @@
 				3F16ABE51CB6BDA1003F2BD2 /* BandsInSelectedGenre.swift in Sources */,
 				3F16ABE11CB6BC7F003F2BD2 /* Genres.swift in Sources */,
 				3F16ABE91CB6BE20003F2BD2 /* SongsBySelectedBand.swift in Sources */,
+				3FE9BF6C1CC7DF0700B809E4 /* ClassDay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
