@@ -14,14 +14,14 @@
 		3F16ABBB1CB418DA003F2BD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F16ABB91CB418DA003F2BD2 /* LaunchScreen.storyboard */; };
 		3F16ABC61CB418DA003F2BD2 /* Lolla_LineupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABC51CB418DA003F2BD2 /* Lolla_LineupTests.swift */; };
 		3F16ABD11CB418DA003F2BD2 /* Lolla_LineupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABD01CB418DA003F2BD2 /* Lolla_LineupUITests.swift */; };
-		3F16ABDF1CB6BC39003F2BD2 /* AllBands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABDE1CB6BC39003F2BD2 /* AllBands.swift */; settings = {ASSET_TAGS = (); }; };
-		3F16ABE11CB6BC7F003F2BD2 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE01CB6BC7F003F2BD2 /* Genres.swift */; settings = {ASSET_TAGS = (); }; };
-		3F16ABE31CB6BCA0003F2BD2 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE21CB6BCA0003F2BD2 /* Days.swift */; settings = {ASSET_TAGS = (); }; };
-		3F16ABE51CB6BDA1003F2BD2 /* BandsInSelectedGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE41CB6BDA1003F2BD2 /* BandsInSelectedGenre.swift */; settings = {ASSET_TAGS = (); }; };
-		3F16ABE71CB6BDD8003F2BD2 /* BandsInSelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE61CB6BDD8003F2BD2 /* BandsInSelectedDay.swift */; settings = {ASSET_TAGS = (); }; };
-		3F16ABE91CB6BE20003F2BD2 /* SongsBySelectedBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE81CB6BE20003F2BD2 /* SongsBySelectedBand.swift */; settings = {ASSET_TAGS = (); }; };
-		3F16ABEB1CBC078E003F2BD2 /* DetailBandClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABEA1CBC078E003F2BD2 /* DetailBandClass.swift */; settings = {ASSET_TAGS = (); }; };
-		3FE9BF6C1CC7DF0700B809E4 /* ClassDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9BF6B1CC7DF0700B809E4 /* ClassDay.swift */; settings = {ASSET_TAGS = (); }; };
+		3F16ABDF1CB6BC39003F2BD2 /* AllBands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABDE1CB6BC39003F2BD2 /* AllBands.swift */; };
+		3F16ABE11CB6BC7F003F2BD2 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE01CB6BC7F003F2BD2 /* Genres.swift */; };
+		3F16ABE31CB6BCA0003F2BD2 /* Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE21CB6BCA0003F2BD2 /* Days.swift */; };
+		3F16ABE51CB6BDA1003F2BD2 /* BandsInSelectedGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE41CB6BDA1003F2BD2 /* BandsInSelectedGenre.swift */; };
+		3F16ABE71CB6BDD8003F2BD2 /* BandsInSelectedDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE61CB6BDD8003F2BD2 /* BandsInSelectedDay.swift */; };
+		3F16ABE91CB6BE20003F2BD2 /* SongsBySelectedBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABE81CB6BE20003F2BD2 /* SongsBySelectedBand.swift */; };
+		3F16ABEB1CBC078E003F2BD2 /* DetailBandClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F16ABEA1CBC078E003F2BD2 /* DetailBandClass.swift */; };
+		3FE9BF6C1CC7DF0700B809E4 /* ClassDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9BF6B1CC7DF0700B809E4 /* ClassDay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +113,6 @@
 		3F16ABAF1CB418DA003F2BD2 /* Lolla Lineup */ = {
 			isa = PBXGroup;
 			children = (
-				3F16ABB01CB418DA003F2BD2 /* AppDelegate.swift */,
 				3F16ABB21CB418DA003F2BD2 /* ViewController.swift */,
 				3F16ABB41CB418DA003F2BD2 /* Main.storyboard */,
 				3F16ABEA1CBC078E003F2BD2 /* DetailBandClass.swift */,
@@ -125,6 +124,7 @@
 				3F16ABE61CB6BDD8003F2BD2 /* BandsInSelectedDay.swift */,
 				3F16ABE81CB6BE20003F2BD2 /* SongsBySelectedBand.swift */,
 				3F16ABB71CB418DA003F2BD2 /* Assets.xcassets */,
+				3F16ABB01CB418DA003F2BD2 /* AppDelegate.swift */,
 				3F16ABB91CB418DA003F2BD2 /* LaunchScreen.storyboard */,
 				3F16ABBC1CB418DA003F2BD2 /* Info.plist */,
 			);
@@ -216,6 +216,7 @@
 				TargetAttributes = {
 					3F16ABAC1CB418DA003F2BD2 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = G2DL5CTVH2;
 					};
 					3F16ABC01CB418DA003F2BD2 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -430,10 +431,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Lolla Lineup/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jc.Lolla-Lineup";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -441,10 +445,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Lolla Lineup/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jc.Lolla-Lineup";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -26,6 +26,7 @@ class DetailBandClass: NSObject
     var songFiveName : String
     
     var day : String
+    //var stage : String
     
     override init()
     {
@@ -45,6 +46,7 @@ class DetailBandClass: NSObject
         songFiveName = ""
         
         day = ""
+        //stage = ""
     }
     
     

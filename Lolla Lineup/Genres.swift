@@ -13,13 +13,18 @@ class Genres: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var genresTableView: UITableView!
     
-    var listOfGenresArray = ["Alternative", "Country", "Electronic", "Hip Hop", "Pop", "Rap", "Rock"]
+    var listOfGenresArray = ["Alternative", "Electronic", "Hip Hop", "House", "Pop", "Rap", "Rock"]
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        navigationItem.title = "Lolla Lineup 2016"
+        //navigationItem.title = "Lolla Lineup 2016"
         
+        let image = UIImage(named: "Revised Final Lolla")
+        navigationItem.titleView = UIImageView(image: image)
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .ScaleAspectFit
+
         genresTableView.dataSource = self
         genresTableView.delegate = self
         
